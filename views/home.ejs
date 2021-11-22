@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>
+            <%= title %>
+        </title>
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    </head>
+        <body>
+            <h1>TODO App</h1>
+            <div>
+                <form action="/user" id="form" method="post">
+                    <div>
+                        Title
+                        <input id="input-name" type = "text" name="title" >
+                    </div>
+                    <div>
+                        Description
+                        <input id="input-name" name="description" >
+                    </div>
+                    <div>
+                        Category
+                        <div class="dropdown">
+                           <select name = "category">
+                               <option valus = "Personal">
+                                   Personal
+                               </option>
+                               <option valus = "School">
+                                School
+                            </option>
+                            <option valus = "Home">
+                                Home
+                            </option>
+                            <option valus = "Work">
+                                Work
+                            </option>
+                            <option valus = "Others">
+                                Others
+                            </option>
+                           </select>
+                            <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                            <a class="dropdown-item" href="#">Personal</a>
+                            <a class="dropdown-item" href="#">School</a>
+                            <a class="dropdown-item" href="#">Home</a>
+                            <a class="dropdown-item" href="#">Work</a>
+                            <a class="dropdown-item" href="#">Other</a>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div>
+                        Due Date
+                    <input id="input-email" name="due" type="text">
+                    </div>
+                    <button type="submit"> Add Task</button>
+                </form>
+                    <button> Del Tasks</button>
+                    <p>
+                        Why not add a task?
+                    </p>
+                    <p>Lets make a todo app!!!</p>
+                    
+                    <% for( let i of todo_list){%>
+                    
+                        <li class="contact">
+                            <div class="details">
+                                <p><%=i.title %></p>
+                                <p><%=i.description %></p>
+                                <p><%=i.category %></p>
+                                <p><%=i.createdAt %></p>
+                            </div>
+                            <div class="delete-button">
+                                <a href="/delete-contact/?id=<%= i._id %>">
+                                    <i class="fas fa-window-close"></i>
+                                </a>
+                                    
+                            </div>
+    
+                        </li>
+                        
+                       <% } %>
+                           
+            </div>
+        </body>
+</html>
