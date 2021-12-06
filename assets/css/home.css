@@ -1,0 +1,84 @@
+body{
+        height: 100vh;
+        width: 100%;
+        background: linear-gradient(to bottom, #68EACC 0%, #497BE8);
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+}
+
+.wrapper{
+    margin: 120px auto;
+    max-width: 400px;
+    width: 100%;
+    border-radius: 5px;
+    padding: 25px;
+    background: #fff;
+}
+
+.category-main{
+    display: flex;
+    flex: 2;
+    flex-direction: row;
+}
+
+.category-field{
+    display: flex;
+    flex: 1;
+    flex-direction: column;
+}
+
+.btn-comp{
+    display: flex;
+    flex : 1;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.wrapper header{
+    font-size: 30px;
+    font-weight: 600;
+}
+
+.wrapper .input-field{
+    display: flex;
+    height: 45px;
+    width: 100%;
+    margin: 20px 0;
+
+}
+.wrapper .todo-list{
+    max-height: 250px;
+    overflow-y: auto;
+}
+
+.input-field input{
+    width: 85%;
+    height: 100%;
+    border: 1px solid #ccc;
+    font-size: 17px;
+    border-radius: 3px;
+    padding-left: 15px;
+}
+        
+
+
+.card {
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
+    transition: 0.3s;
+    width: 100%;
+    margin-bottom: 1rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .card:hover {
+    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2);
+  }
+  
+  .container {
+    padding: 2px 16px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }

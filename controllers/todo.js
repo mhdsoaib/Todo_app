@@ -9,22 +9,23 @@ export const getTodo = async (req,res) => {
      console.log(todo);
 
      res.render('home',{
-         title : 'kuch nhi',
+         title : 'Todo',
          todo_list : todo
      })
   }
   catch(e){
-    res.render({message : e.message})
+    req.session.error = 'Incorrect username or password';
+
+    return res.redirect('/?error=' + encodeURIComponent('Incorrect_Credential'));
   }
 }
 
 export const createTodo = async(req,res) => {
 
     const todo = {
-       title: req.body.title,
        description :req.body.description,
        category : req.body.category,
-       dueDate: req.body.due
+       dueDate: req.body.dueDate
     };
 
     console.log('body', req.body);
@@ -39,6 +40,9 @@ export const createTodo = async(req,res) => {
         
     }
     catch(e){
-        res.status(409).json({message : e.message})
+      
+      return res.redirect('/?error=' + encodeURIComponent('Incorrect_Credential'));
+    
     }
 }
+
